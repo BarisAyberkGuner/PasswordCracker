@@ -15,12 +15,16 @@ public class ValueChecker {
         Integer digitControl = 0;
         String checker = "0123456789";
 
+        //Burada stringde bir karakterin kaç kere tekrarladığını map içine aldık.
         Map<String, Long> counts = number.toString().chars().mapToObj(Character::toString)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
 
         for(char c : checker.toCharArray()) {
             if(counts.get(String.valueOf(c)) == null)
                 continue;
+            //Burada map içindeki sayının kaç kere tekrarlandığını o sayının indisteki değeriyle kıyaslıyoruz.
+            // Eşit ise digitControlü arttırıyoruz. Hata oluşursa false döndürüyoruz.
             if(counts.get(String.valueOf(c)) == number.getDigits()[Character.getNumericValue(c)].longValue())
                 digitControl += number.getDigits()[Character.getNumericValue(c)];
             else
