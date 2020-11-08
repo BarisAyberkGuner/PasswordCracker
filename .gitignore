@@ -5,8 +5,8 @@
 *.log
 
 # .idea file
-PassCracker/.idea/
-
+.idea/
+.target/
 
 # BlueJ files
 *.ctxt
