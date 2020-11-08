@@ -4,6 +4,10 @@
 # Log file
 *.log
 
+# .idea file
+PassCracker/.idea/
+
+
 # BlueJ files
 *.ctxt
 
